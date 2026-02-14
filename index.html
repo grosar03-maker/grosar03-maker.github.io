@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Princesa ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffebee;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 90%;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            border: 2px solid #ffcdd2;
+        }
+
+        h1 {
+            color: #d32f2f;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #444;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            text-align: left;
+            white-space: pre-line;
+        }
+
+        .signature {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #d32f2f;
+            font-size: 1.2rem;
+            text-align: right;
+        }
+
+        /* Corazones animados de fondo */
+        .heart {
+            position: fixed;
+            top: -10vh;
+            transform: translateY(0);
+            color: #ff5252;
+            font-size: 20px;
+            user-select: none;
+            z-index: 1;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh);
+            }
+        }
+
+        .floating-heart {
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="floating-heart" style="font-size: 40px;">❤️</div>
+        <h1>¡Feliz San Valentín!</h1>
+        <p>
+            ¡Feliz San Valentín, mi amor!
+
+            Te juro que no puedo creer que ya estemos llegando a los 3 años. Miro hacia atrás y me doy cuenta de que esto ha sido una tremenda travesía, una montaña rusa de emociones. Sé que hemos tenido de todo, momentos increíbles y otros difíciles donde nos ha tocado remarla, pero al final del día, lo que más valoro es que siempre seguimos aquí, el uno para el otro.
+
+            Eres mi niña, mi princesa, y la persona que me hace querer ser mejor. Gracias por cada risa, por cada aguante y por ser mi compañera en todo este tiempo. No cambiaría lo que tenemos por nada, porque a pesar de los altibajos, tú sigues siendo lo mejor de mis días.
+
+            Te amo muchísimo, mi vida. Vamos por más.
+        </p>
+        <div class="signature">Con amor, Gustavo ❤️</div>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.opacity = Math.random();
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
